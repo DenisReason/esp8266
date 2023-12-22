@@ -18,6 +18,7 @@ const wss = new WebSocketServer({ noServer: true });
 wss.on('connection', (ws) => {
     console.log("WebSocket client connected");
     connectedWs = ws;
+    ws.isAlive=true;
 
     ws.on('pong', () => {
         ws.isAlive = true;
