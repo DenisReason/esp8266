@@ -26,7 +26,7 @@ wss.on('connection', (ws) => {
     ws.on('message', (message) => {
         console.log("Received message:", message);
     });
-    
+
     ws.send("message from sever");
     console.log("Here!!!!!!");
     ws.on('close', () => {
@@ -65,5 +65,6 @@ setInterval(() => {
 
         ws.isAlive = false;
         ws.ping();
+        console.log("Ping is sending");
     });
 }, 30000); // Ví dụ ở đây là 30 giây
