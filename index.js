@@ -1,9 +1,15 @@
 import express from 'express';
 import { createServer } from 'http';
 import { WebSocketServer } from 'ws';
+import cors from 'cors'
 
 // Khởi tạo Express app
 const app = express();
+app.use(cors({
+    origin:"http://localhost:19006",
+    methods:["GET", "POST"]
+    
+}))
 const PORT = process.env.PORT || 3000;
 
 // Sử dụng body-parser để xử lý JSON từ body request
