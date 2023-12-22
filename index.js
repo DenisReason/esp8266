@@ -28,6 +28,7 @@ wss.on('connection', (ws) => {
     });
 
     ws.send('message',"message from sever");
+    console.log("Here!!!!!!");
     ws.on('close', () => {
         console.log("WebSocket connection closed");
     });
@@ -41,10 +42,6 @@ app.post('/data', (req, res) => {
     }
     res.json({ message: 'Command received and processed' });
 });
-app.get('/',(req, res, next)=>{
-    console.log("req from client");
-    connectedWs.send("Hello from server")
-})
 
 // Tạo HTTP server từ Express app
 const server = createServer(app);
