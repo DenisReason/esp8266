@@ -47,6 +47,15 @@ app.post('/data', (req, res) => {
     if (req.body.script === "moveForward" && connectedWs) {
         connectedWs.send("moveForward");
     }
+    else if(req.body.script ==="turnLeft" && connectedWs){
+        connectedWs.send("turnLeft")
+    }
+    else if(req.body.script ==="turnRight" && connectedWs){
+        connectedWs.send("turnRight")
+    }
+    else if(req.body.script ==="moveBack" && connectedWs){
+        connectedWs.send("moveBack")
+    }
     res.json({ message: 'Command received and processed' });
 });
 
