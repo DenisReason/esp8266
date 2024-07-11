@@ -10,7 +10,7 @@ app.use(cors({
     methods:["GET", "POST"]
     
 }))
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 443;
 
 // Sử dụng body-parser để xử lý JSON từ body request
 app.use(express.json());
